@@ -107,10 +107,3 @@ We're the same folks who make Brace.io, the simple way to host websites. Brace C
 
 Brace Charts is a tool made by Brace.io. To contact us send an email to team@brace.io or use the form on the right.
 
-Other stuff we've made
-
-Brace.io is the easiest way to host websites via Dropbox
-
-Formspree provides forms for static sites. No PHP, Javascript or iFrames required.
-   SEND
-  
