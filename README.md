@@ -11,7 +11,7 @@ Example:
     <img src="//charts.brace.io/bar.svg?Foo=1,1,2,3,5">
 
 
-### Pies, Bars and Lines
+## Pies, Bars and Lines
 
 There are 3 different types of charts. Choose one by changing the path.
 
@@ -27,7 +27,7 @@ There are 3 different types of charts. Choose one by changing the path.
 
     charts.brace.io/line.svg?Things=lorem_flat
 
-### Choose a Style
+## Choose a Style
 
 Just by adding _style=Stylename to the URL
 
@@ -39,7 +39,7 @@ Just by adding _style=Stylename to the URL
 
     charts.brace.io/bar.svg?Foo=lorem_exp&_style=dark
 
-### Supplying data
+## Supplying data
 
 You can just append the data for the chart to the URL parameters.
 
@@ -63,7 +63,7 @@ For pies it's mostly the same, except you have names for sections and one value 
 
     charts.brace.io/pie.svg?Some=1&Thing=2
 
-### Other fancy features
+## Other fancy features
 
 Here are some additional neat features that Brace Charts provide.
 
@@ -89,7 +89,7 @@ Use an <object> tag instead of images. This gives you fancy hover-states.
 
     <object type="image/svg+xml" data="http://charts.brace.io/line.svg?Some=lorem_flat&Stuff=lorem_flat&_interpolate=cubic &_fill=true&_height=300px"></object>
 
-### Questions you might have
+## Questions you might have
 
 #### How much does it cost?
 
