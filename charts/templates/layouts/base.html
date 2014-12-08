@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{{config.SERVICE_NAME}}{% endblock %}</title>
+    
+    <script type="text/javascript" src="//use.typekit.net/agn1wgz.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.4.1/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+
+    <meta name="viewport" content="initial-scale=1">
+
+</head>
+<body class="">
+    <div class="row">
+        <div class="container narrow card">
+            {% block base %}
+            <h1>Nothing to see here</h1>
+            {% endblock %}
+        </div>
+        <div class="container narrow">
+            <p class="footer">{% block footer %}{% endblock %}</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <title>{{config.SERVICE_NAME}} | Make charts in seconds</title>
+  
+  <link rel="stylesheet" href="/static/css/main.css" />
+
+  <script type="text/javascript" src="//use.typekit.net/bvn3gpz.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+  <link rel="icon" type="image/png" href="{{config.SERVICE_URL/favicon.ico">
+
+  <meta name="viewport" content="initial-scale=1">
+
+  <style>
+
+    /* 
+Make the Facebook Like box responsive (fluid width)
+https://developers.facebook.com/docs/reference/plugins/like-box/ 
+*/
+
+/* 
+This element holds injected scripts inside iframes that in 
+some cases may stretch layouts. So, we're just hiding it. 
+*/
+
+#fb-root {
+    display: none;
+}
+
+/* To fill the container and nothing else */
+
+.fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe[style] {
+    width: 100% !important;
+}
+
+  </style>
+
+</head>
+<body> 
+
+  <div class="row section" id="header">
+        <div class="container" id="title">
+            <div class="col-1-1">
+                <img src="/static/img/logo.png" alt="" class="center animate dropIn">
+                <h1 class="center"><span class="caps">{{config.SERVICE_NAME}}</span> <small>by <a href="http://brace.io" style="display: inline-block; font-style: none; cursor: pointer; color:#aaa; margin-bottom: -10px;">Brace</a></small></h1>
+            </div>
+        </div>
+      <div class="container">
+          <div class="col-1-2">
+            <h1 style="font-weight: 900;">Make charts in seconds</h1>
+            <h3 class="light">Use our URL to inject charts into your website. The data is supplied via the URL, no Javascript required. Plus, if you need Lorem Ipsum charts, <a href="#lorem">we've got you covered.</a></h3>
+            </div>
+            <div class="col-1-2">
+                <p>Example:</p>
+<img src="{{config.API_ROOT}}/bar.svg?Foo=1,1,2,3,6&_height=250px" alt="">
+                <p class="code card">
+                  &lt;img <span class="tooltip hint--top" data-hint="Use our URL">src="{{config.API_ROOT}}</span>/<span class="tooltip hint--top" data-hint="Select a Chart">bar.svg</span>?<span class="tooltip hint--top" data-hint="Data is part of the URL">Foo=1,1,2,3,5</span>"&gt;
+                </p>
+            </div>
+      </div>
+  </div>
+
+  <div class="row section">
+
+      <div class="container block">
+          <div class="col-1-2">
+              <h2>Pies, Bars and Lines</h2>
+              <h4 class="light">There are 3 different types of charts. Choose one by changing the path.</h4>
+          </div>
+
+          <div class="col-1-2">
+              <h3>Pies</h3>
+              <img src="{{config.API_ROOT}}/pie.svg?Things=5&Stuff=2" alt="">
+              <p class="code card">{{config.API_ROOT}}/<span class="tooltip hint--top" data-hint="Pie charts">pie.svg</span>?Things=5&Stuff=2</p>
+              <h3>Bars</h3>
+              <img src="{{config.API_ROOT}}/bar.svg?Things=lorem_exp&_height=250px" alt="">
+              <p class="code card">{{config.API_ROOT}}/<span class="tooltip hint--top" data-hint="Bar charts">bar.svg</span>?Things=lorem_exp</p>
+              <h3>Lines</h3>
+              <img src="{{config.API_ROOT}}/line.svg?Things=lorem_flat&_height=250px" alt="">
+              <p class="code card">{{config.API_ROOT}}/<span class="tooltip hint--top" data-hint="Lines">line.svg</span>?Things=lorem_flat</p>
+          </div>
+
+      </div>
+
+  </div>
+
+  <div class="row section">
+
+      <div class="container block">
+          <div class="col-1-2">
+              <h2>Choose a Style</h2>
+              <h4 class="light">Just by adding <span class="code">_style=<em>Stylename</em></span> to the URL</h4>
+          </div>
+          <div class="col-1-2">
+              <h3>Light (default)</h3>
+              <img src="{{config.API_ROOT}}/bar.svg?Foo=lorem_exp&_height=250px&_style=light">
+              <p class="code card">{{config.API_ROOT}}/bar.svg?Foo=lorem_exp&<span class="tooltip hint--top" data-hint="Light theme is the default">_style=light</span></p>
+              <h3>Dark</h3>
+              <img src="{{config.API_ROOT}}/bar.svg?Foo=lorem_exp&_height=250px&_style=dark">
+              <p class="code card">{{config.API_ROOT}}/bar.svg?Foo=lorem_exp&<span class="tooltip hint--top" data-hint="Theme for dark backgrounds">_style=dark</span></p>
+          </div>
+      </div>
+
+  </div>
+
+  <div class="row section">
+
+      <div class="container block">
+          <div class="col-1-2">
+              <h2>Supplying data</h2>
+              <h4 class="light">You can just append the data for the chart to the URL parameters.</h4>
+          </div>
+
+          <div class="col-1-2">
+              <h3>Bars and Lines</h3>
+              <p>Generally you provide <span class="code">DataSet=&lt;list-of-values&gt;</span>. For example:</p>
+              <p class="code card">{{config.API_ROOT}}/line.svg?<span class="tooltip hint--top" data-hint="Data label">Things</span>=<span class="tooltip hint--top" data-hint="A comma-separated list of numbers">1,2,3</span></p>
+              <p>You can also have multiple datasets, like:</p>
+              <p class="code card">{{config.API_ROOT}}/line.svg?<span class="tooltip hint--top" data-hint="First label">Some</span>=<span class="tooltip hint--top" data-hint="A comma separated list of numbers">1,2,3</span>&<span class="tooltip hint--top" data-hint="Second label">Thing</span>=<span class="tooltip hint--top" data-hint="A comma separated list of numbers">2,3,4</span></p>
+              <p>Finally, you can add labels to the x axis:</p>
+              <p class="code card">{{config.API_ROOT}}/bar.svg?Likes=3,2,4&<span class="tooltip hint--top" data-hint="X labels">_labels=Jan,Feb,Mar</span></p>
+              <h3>Pies</h3>
+              <p>For pies it's mostly the same, except you have names for sections and one value per section.</p>
+              <p class="code card">{{config.API_ROOT}}/pie.svg?<span class="tooltip hint--top" data-hint="Section label">Some</span>=<span class="tooltip hint--top" data-hint="Section value">1</span>&<span class="tooltip hint--top" data-hint="Section label">Thing</span>=<span class="tooltip hint--top" data-hint="Section value">2</span></p>
+          </div>
+
+      </div>
+
+  </div>
+
+
+  <div class="row section">
+
+      <div class="container block">
+          <div class="col-1-2">
+              <h2>Other fancy features</h2>
+              <h4 class="light">Here are some additional neat features that {{config.SERVICE_NAME}} provides.</h4>
+          </div>
+
+          <div class="col-1-2">
+
+              <a name="lorem"></a><h3>Generate placeholder data</h3> 
+              <p>If you're prototyping and need placeholder charts, we have a solution for you. Instead of providing numbers, you can just use one of these keywords.</p>
+              <p class="code card">{{config.API_ROOT}}/bar.svg?Stuff=<span class="tooltip hint--top" data-hint="Values keep growing">lorem_exp</span></p>
+              <p class="code card">{{config.API_ROOT}}/bar.svg?Stuff=<span class="tooltip hint--top" data-hint="Values form a hockey stick">lorem_hockey</span></p>
+              <p class="code card">{{config.API_ROOT}}/bar.svg?Stuff=<span class="tooltip hint--top" data-hint="Values follow bell curve">lorem_bell</span></p>
+              <p class="code card">{{config.API_ROOT}}/bar.svg?Stuff=<span class="tooltip hint--top" data-hint="Values are pretty flat">lorem_flat</span></p>
+
+              <h3>Customize the appearance of (line) charts</h3>
+              <img src="http:{{config.API_ROOT}}/line.svg?Foo=lorem_hockey&_show_legend=false&_height=300px&_interpolate=cubic&_fill=true"></object>
+              <p class="code card">
+                &lt;img src="http:{{config.API_ROOT}}/line.svg?Foo=lorem_hockey&<wbr><span class="tooltip hint--top" data-hint="Hide the legend. Works for all chart types">_show_legend=false</span>&<wbr><span class="tooltip hint--top" data-hint="Set the height for a chart. Works for all.">_height=300px</span>&<wbr><span class="tooltip hint--top" data-hint="Set how the line is interpolated">_interpolate=cubic</span>&<wbr><span class="tooltip hint--top" data-hint="Fill lines">_fill=true</span>"&gt;
+              </p>
+
+              <h3>Show off with hover effects</h3> 
+              <p>Use an <span class="code">&lt;object&gt;</span> tag instead of images. This gives you fancy hover-states.</p>
+              <object type="image/svg+xml" data="http:{{config.API_ROOT}}/line.svg?Some=lorem_flat&Stuff=lorem_flat&_interpolate=cubic&_fill=true&_height=300px"></object>
+              <p class="code card">&lt;object type="image/svg+xml" data="http:{{config.API_ROOT}}/line.svg?Some=lorem_flat&Stuff=lorem_flat&_interpolate=cubic &_fill=true&_height=300px"&gt;&lt;/object&gt;</p>
+
+
+          </div>
+
+      </div>
+
+  </div>
+
+  <div class="row section">
+
+      <div class="container block">
+          <div class="col-1-2"><h2>Questions you might have</h2></div>
+          <div class="col-1-2">
+                  <h3>How much does it cost?</h3>
+                  <p>For now, {{config.SERVICE_NAME}} is free and is limited to 10,000 views per chart per month. If you need more, please reach out to <a href="mailto:{{config.CONTACT_EMAIL}}">{{config.CONTACT_EMAIL}}</a>.</p>
+
+                  <h3>What charting library did you use?</h3>
+                  <p>{{config.SERVICE_NAME}} is based on <a href="http://pygal.org">pygal</a>, an awesome charting library for Python.</p>
+
+                  <h3>Who are you guys?</h3>
+                  <p>We're the same folks who make <a href="http://brace.io">Brace.io</a>, the simple way to host websites. {{config.SERVICE_NAME}} is one of our sideprojects that aim to make authoring and designing for the web easy.</p>
+          </div>
+
+      </div>
+
+  </div>
+
+  <div class="row section grey">
+
+      <div class="container block">
+          <div class="col-1-2">
+            <p>{{config.SERVICE_NAME}} is a tool made by <a href="http://brace.io">Brace.io</a>. To contact us send an email to <a href="mailto:{{config.CONTACT_EMAIL}}">{{config.CONTACT_EMAIL}}</a> or use the form on the right.</p>
+          </div>
+          <div class="col-1-2">
+            <form method="POST" action="{{config.FORMS_API}}/{{config.CONTACT_EMAIL}}">
+              <input type="text" name="_subject" placeholder="What is this about?" />
+              <input type="email" name="_replyto" placeholder="Your email" />
+              <textarea name="message" rows="5"></textarea>
+              <button type="submit">Send</button>
+            </form>
+          </div>
+      </div>
+
+  </div>
+
+</body>
+</html>

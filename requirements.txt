@@ -1,0 +1,11 @@
+Flask==0.10.1
+Flask-Script==0.6.7
+Jinja2==2.7.2
+MarkupSafe==0.18
+Werkzeug==0.9.4
+itsdangerous==0.23
+lxml==3.3.3
+wsgiref==0.1.2
+-e git+https://github.com/colevscode/pygal.git#egg=pygal
+gunicorn
+redis
