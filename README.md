@@ -105,5 +105,5 @@ We're the same folks who make Brace.io, the simple way to host websites. Brace C
 
 --------
 
-Brace Charts is a tool made by Brace.io. To contact us send an email to team@brace.io or use the form on the right.
+Brace Charts is a tool made by Brace.io. To contact us send an email to team@brace.io.
 
